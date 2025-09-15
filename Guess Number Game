@@ -1,0 +1,27 @@
+import random ## importing random value
+n = random.randint(1, 100) ## all random value will store in n variable
+
+a = -1 ## initializing a = -1
+guesses = 1 ## initializing guesses by 1
+
+while(a != n): ## this is a condition when a is not equal to n which is true always because a = -1 and n will have value from 1 to 100
+    a = input("Guess the number : or press (Q) to quit the game. ").lower() ## convert input to lowercase
+
+    if (a == 'q'): ## check if the input is lowercase 'q'
+        print("You chose to quit the game. Thank you for playing!")
+        break
+
+    a = int(a) ## convert input to an integer
+
+    if (a < n):
+        print("Higher number please...")
+        guesses += 1
+
+    elif (a > n):
+        print("Lower number please...")
+        guesses += 1
+
+    if (a == n):  ## WE CAN USE ELSE ALSO else:  then same both print statement
+       print(f"You have guessed {n} correctly in {guesses} attempts")
+       print("_________GAME OVER__________")
+
